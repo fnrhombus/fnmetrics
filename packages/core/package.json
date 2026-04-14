@@ -1,0 +1,73 @@
+{
+  "name": "fnmetrics",
+  "displayName": "Code Complexity Metrics",
+  "description": "Inline cyclomatic and cognitive complexity for TypeScript/JavaScript. Successor to CodeMetrics.",
+  "version": "0.1.0",
+  "publisher": "fnrhombus",
+  "license": "MIT",
+  "author": "fnrhombus",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fnrhombus/fnmetrics"
+  },
+  "bugs": {
+    "url": "https://github.com/fnrhombus/fnmetrics/issues"
+  },
+  "homepage": "https://github.com/fnrhombus/fnmetrics#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Other"
+  ],
+  "keywords": [
+    "complexity",
+    "cyclomatic",
+    "cognitive",
+    "metrics",
+    "code-quality",
+    "codemetrics"
+  ],
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:javascript",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascriptreact"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Code Complexity Metrics",
+      "properties": {
+        "fnmetrics.greenThreshold": {
+          "type": "number",
+          "default": 5,
+          "description": "Max complexity for green (simple)"
+        },
+        "fnmetrics.yellowThreshold": {
+          "type": "number",
+          "default": 10,
+          "description": "Max complexity for yellow (moderate)"
+        },
+        "fnmetrics.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable complexity indicators"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "typescript": "^5.6.0"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^22.0.0",
+    "tsup": "^8.3.0"
+  }
+}
